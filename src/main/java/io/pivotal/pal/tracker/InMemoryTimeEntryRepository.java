@@ -3,7 +3,6 @@ package io.pivotal.pal.tracker;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class InMemoryTimeEntryRepository implements TimeEntryRepository {
     private HashMap<Long, TimeEntry> timeEntries = new HashMap<>();
@@ -15,11 +14,12 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
         Long id = currentId++;
 
         TimeEntry newTimeEntry = new TimeEntry(
-                id,
-                timeEntry.getProjectId(),
-                timeEntry.getUserId(),
-                timeEntry.getDate(),
-                timeEntry.getHours()
+
+            id,
+            timeEntry.getProjectId(),
+            timeEntry.getUserId(),
+            timeEntry.getDate(),
+            timeEntry.getHours()
         );
 
         timeEntries.put(id, newTimeEntry);
@@ -41,11 +41,13 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
         if (find(id) == null) return null;
 
         TimeEntry updatedEntry = new TimeEntry(
-                id,
-                timeEntry.getProjectId(),
-                timeEntry.getUserId(),
-                timeEntry.getDate(),
-                timeEntry.getHours()
+
+            id,
+            timeEntry.getProjectId(),
+            timeEntry.getUserId(),
+            timeEntry.getDate(),
+            timeEntry.getHours()
+
         );
 
         timeEntries.replace(id, updatedEntry);

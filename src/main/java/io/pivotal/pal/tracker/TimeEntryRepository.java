@@ -4,14 +4,9 @@ import java.util.List;
 
 public interface TimeEntryRepository {
 
-    public TimeEntry create(TimeEntry entry);
-
-    public TimeEntry find(long id);
-
-    public List<TimeEntry> list();
-
-    public TimeEntry update(long id, TimeEntry timeEntry);
-
-    public void delete(long id);
-
+    TimeEntry create(TimeEntry timeEntry);
+    TimeEntry find(Long id);
+    List<TimeEntry> list();
+    TimeEntry update(Long id, TimeEntry timeEntry);
+    void delete(Long id);
 }
