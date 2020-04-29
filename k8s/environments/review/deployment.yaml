@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: pal-tracker-container
-          image: vmwarevarunrai/pal-tracker:build-1
+          image: vmwarevarunrai/pal-tracker:build-github.run_number
